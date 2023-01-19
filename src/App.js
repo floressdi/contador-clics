@@ -1,25 +1,45 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { useState } from 'react';
+import BtnClic from './components/BtnClic';
+import BtnDelete from './components/BtnDelete';
+import DisplayCounter from './components/DisplayCounter';
 
 function App() {
+  
+  const [counter, setCounter] = useState(0)
+
+  function handleChange(e){
+    setCounter(counter +1);
+  }
+
+  function resetCounter(e){
+    setCounter(0)
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <h2 className='flexbox'> Click counter </h2> 
+
+        <section className='sectionbtn flexbox'>
+            <div>
+                <DisplayCounter
+                  counter ={counter}
+                 />
+            </div>
+
+            <div className='containerBtns'>
+                 <BtnClic
+                    counter = {counter}
+                    handleChange={handleChange}
+                    text= 'CLICK'
+                 />
+                 <BtnDelete
+                    counter={counter}
+                    resetCounter = {resetCounter}
+                    text ='RESET'
+                 />
+            </div>
+        </section>
     </div>
   );
-}
-
-export default App;
+}export default App;
