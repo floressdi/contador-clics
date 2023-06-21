@@ -11,7 +11,7 @@ export default function Inicio() {
   return (
     <section className='inicio flexbox'>
      <div className={`menuinicio ${start ? "activate": ""}`}> {/*asignamos una clase cuando se inicie el juego*/}
-        <h3>¿Cuántos clics puedes hacer en 30 segudos?</h3>
+        <h3>¿Cuántos clics puedes hacer en 30 segundos?</h3>
         <button className='btn_start flexbox' onClick={clicks}>
           <p>jugar!</p>
         </button>
