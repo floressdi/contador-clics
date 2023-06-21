@@ -3,15 +3,16 @@ import '../App.css';
 
 export default function BtnDelete(prop) {
 
-  const {counter, resetCounter, text} = prop
+  const resetGame = () =>{
+    window.location.reload(true)
+  }
 
   return (
     <div>
         <button className='btnDelete btn'
-            onClick={resetCounter}
-            value={counter}
+            onClick={resetGame}
         >
-            <p>{text}</p>
+            <p>{prop.text}</p>
         </button>
     </div>
   )
